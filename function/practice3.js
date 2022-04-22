@@ -35,7 +35,10 @@ console.log(newPersons);
 
 function tableList(personAry){
   document.write(`<table border = 1px>`);
-  document.write(`<tr><th>순번</th><th>이름</th><th>나이</th> <th>키</th><tr>`);
+  document.write(`<tr><th>순번</th>
+                  <th>이름</th>
+                  <th>나이</th>
+                  <th>키</th><tr>`);
   for(let person of personAry){ // line 생성
     document.write(`<tr>`);
     for(let field in person){ // 칼럼생성

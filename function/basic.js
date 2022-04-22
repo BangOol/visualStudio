@@ -10,16 +10,18 @@ function sum(num1, num2){ // --> 이렇게 sum이라는 함수가 선언되어 �
   // 안에서 따로 매개변수의 값을 선언해주지 않아도 됨.
   // -> let sum = functon(num1, num2) { }
 }
-let result = sum(10,20); // 이런식으로 매개변수값을 넣으면 자동으로 값이 나옴.
-let result1 = sum(10,20,30); // 매개변수 3개로 잘못 입력해도 오류가 나지는 않음.
-console.log('결과는 ' + result);
-console.log('결과는 ' + result1);
+
 
 //2. 이렇게 함수 표현식으로 정의가능.
 let myfnc = function(val1, val2){
   var myVal = 10;
   return val1 + val2 + myVal;
 }
+ 
+let result = sum(10,20); // 이런식으로 매개변수값을 넣으면 자동으로 값이 나옴.
+let result1 = sum(10,20,30); // 매개변수 3개로 잘못 입력해도 오류가 나지는 않음.
+console.log('결과는 ' + result);
+console.log('결과는 ' + result1);
 
 console.log(typeof myfnc, myfnc);
 result = myfnc(10,20);
