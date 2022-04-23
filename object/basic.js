@@ -1,5 +1,7 @@
 //object/basic.js
 
+
+
 const member = {
   memberId : 'user1',
   memberName : 'Hong',
@@ -11,11 +13,25 @@ const member = {
   }
 }
 
+
+const examMember = {
+  exMemberIDd : 'user1',
+  exMemberName : 'Hong',
+  exSetMemberName : (name) => {
+    this.exSetMemberName = name; // 이렇게 매개변수가 위의 변수를 의미한다고 얘기하는 건가?
+
+  exGetMemberName : () => {
+    return `회원이름은 ${this.exMemberName}`
+    }
+  }
+}
 console.log(member.memberId);
+console.log(examMember.exMemberIDd);
+console.log(examMember.exMemberName);
 member.setMemberName('Hwang'); // 중간에 이렇게 이름 바꿀 수도 있다.
 console.log(member.getMemberName()); // 함수형으로 정의했기에 함수 적어야함?
 
-member.memberAge = 20; // member에 새로운 속성 추가
+member.memberAge = 20; // member에 새로운 속성 추가 + 없을 때 이렇게 만들 수 있는 듯.
 delete member.memberAge; // member에 memberAge 속성 삭제
 
 member['memberPoint'] = 1000;
