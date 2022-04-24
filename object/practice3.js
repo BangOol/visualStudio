@@ -18,6 +18,11 @@ console.log(today.getFullYear()); // 년도 4자리 수 반환
 console.log(today.getHours()); // 현재 시 반환
 console.log(today.getMinutes()); //현재 분 반환
 console.log(new Date(2022, 2, 0)); //일 부분에 0을 넣으면 전 날이 반환.
+////ewewe
+
+
+
+
 
 let year = 2022;
 let month = 4;
@@ -46,5 +51,16 @@ function makeWeek() {
         document.write(`<th>${week[i]}</th>`);
     }
     document.write(`</thead>`);
+}
+
+function calendar(year, month){
+    document.write(`<tr>`)
+    for(let i = 0; i<7; i++){
+        document.write(`<td></td>`)
+        if(i+firstDate(year, month) % 7 == 0){
+            document.write(`</tr>`)
+        }
+    }
+    document.write(`<tr></tr>`)
 }
 
