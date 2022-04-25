@@ -17,31 +17,23 @@ console.log(today.getMonth()); // 월 : 0부터 반환
 console.log(today.getFullYear()); // 년도 4자리 수 반환
 console.log(today.getHours()); // 현재 시 반환
 console.log(today.getMinutes()); //현재 분 반환
-console.log(new Date(2022, 2, 0)); //일 부분에 0을 넣으면 전 날이 반환.
-////ewewe
+console.log(new Date(2022, 2, 0)); //일 부분에 0을 넣으면 전 날이 반환
 
 
-
-
-
-
-function lastDate(year, month) { // -1 넣으며 1일 기준 이틀 전 날이 반환됨.
-    let lastDate = new Date(year, month, 0); // 그래서 이 경우는 원하는 달 그대로 입력가능
+// 마지막 날짜 찾는 함수
+function lastDate(year, month) { // -1 넣으며 1일 기준 이틀 전 날이 반환됨. 그래서 이 경우는 원하는 달 그대로 입력가능
+    let lastDate = new Date(year, month, 0); 
     return lastDate.getDate();
-} //함수 표현식을 통해서 마지막날 값을 받아두도록 하자.
-
-
-
+} 
 
 function firstDate(year, month) { // 위의 lastDate와 동일하게 month 설정
-    //년, 월, 1을 입력했을 때, day 값 확인 후 빈칸 생성
-    let dd = new Date(year, month - 1, 1);
-    return dd.getDay();
+    let dd = new Date(year, (month - 1), 1);
+    return dd.getDay(); //Date와 다르게 Day는 요일을 숫자로 출력함.
 }
 
 
 let year = 2022;
-let month = 4;
+let month = 6;
 
 
 document.write(`<table border = 1> Calendar`);
@@ -52,8 +44,9 @@ for (let i = 0; i < week.length; i++) {
 }
 document.write(`</thead>`);
 document.write(`<tbody>`)
-for(let i = 0; i <firstDate(year,month); i++){
-    document.write(`<td> </td>`)
+
+for(let i = 0; i <firstDate(year,month); i++){ // 1일 전에 위한 날에 빈칸 만드는 구문
+    document.write(`<td></td>`)
 }
 
 for (let i = 1; i <= lastDate(year, month); i++) {
@@ -62,3 +55,7 @@ for (let i = 1; i <= lastDate(year, month); i++) {
         document.write(`</tr><tr>`)
     }
 }
+
+// 오늘의 날을 표시하기 위한 함수?
+// new Date 함수를 통해 오늘의 (년도, 월, 일)을 받고
+// 현재 출력하고 있는 달력과 오늘의 년도, 월을 비교하여 일치할 경우  색깔을 
